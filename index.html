@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Equalizer made with the Web Audio API</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="eq">
+      <audio id="player" controls crossorigin="anonymous" loop>
+        <source src="https://mainline.i3s.unice.fr/mooc/guitarRiff1.mp3" />
+
+        Your browser does not support the audio tag.
+      </audio>
+
+      <canvas id="myCanvas" width="300" height="100"></canvas>
+      <div class="fast-forward">
+        <button  onclick="rewindAudio()">-3 Sec</button>
+        <button onclick="resetAudio()">Reset</button>
+        <button onclick="fastforwardAudio()">+3 Sec</button>
+      </div>
+      <div class="controls-wrapper">
+        <div class="controls">
+          <label>60Hz</label>
+
+          <webaudio-knob
+            src="./Half_Punk.png"
+            value="0"
+            step="1"
+            min="-30"
+            max="30"
+            oninput="changeGain(this.value, 0);"
+          ></webaudio-knob>
+          <output id="gain0">0 dB</output>
+        </div>
+        <div class="controls">
+          <label>170Hz</label>
+
+          <webaudio-knob
+            src="./Half_Punk.png"
+            value="0"
+            step="1"
+            min="-30"
+            max="30"
+            oninput="changeGain(this.value, 1);"
+          ></webaudio-knob>
+          <output id="gain1">0 dB</output>
+        </div>
+
+        <div class="controls">
+          <label>350Hz</label>
+
+          <webaudio-knob
+            src="./Half_Punk.png"
+            value="0"
+            step="1"
+            min="-30"
+            max="30"
+            oninput="changeGain(this.value, 2);"
+          ></webaudio-knob>
+          <output id="gain2">0 dB</output>
+        </div>
+
+        <div class="controls">
+          <label>1000Hz</label>
+
+          <webaudio-knob
+            src="./Half_Punk.png"
+            value="0"
+            step="1"
+            min="-30"
+            max="30"
+            oninput="changeGain(this.value, 3);"
+          ></webaudio-knob>
+          <output id="gain3">0 dB</output>
+        </div>
+
+        <div class="controls">
+          <label>3500Hz</label>
+
+          <webaudio-knob
+            src="./Half_Punk.png"
+            value="0"
+            step="1"
+            min="-30"
+            max="30"
+            oninput="changeGain(this.value, 4);"
+          ></webaudio-knob>
+          <output id="gain4">0 dB</output>
+        </div>
+
+        <div class="controls">
+          <label>10000Hz</label>
+
+          <webaudio-knob
+            src="./Half_Punk.png"
+            value="0"
+            step="1"
+            min="-30"
+            max="30"
+            oninput="changeGain(this.value, 5);"
+          ></webaudio-knob>
+          <output id="gain5">0 dB</output>
+        </div>
+
+        <div class="controls">
+          <label>Master volume</label>
+
+          <webaudio-knob
+            src="./Half_Punk.png"
+            value="10"
+            step="0.1"
+            min="0"
+            max="10"
+            oninput="changeMasterGain(this.value);"
+          ></webaudio-knob>
+          <output id="masterGainOutput">10&nbsp;&nbsp;&nbsp;&nbsp;</output>
+        </div>
+
+        <div class="controls">
+          <label>Balance</label>
+          <webaudio-knob
+            src="./Half_Punk.png"
+            value="0"
+            min="-1"
+            max="1"
+            step="0.1"
+            oninput="changeBalance(this.value);"
+          ></webaudio-knob>
+
+          <output id="balanceOutput">0&nbsp;&nbsp;&nbsp;&nbsp;</output>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+    <script>
+      WebAudioControlsOptions = {
+        knobDiameter: 80,
+      };
+    </script>
+    <script src="https://g200kg.github.io/webaudio-controls/webaudio-controls.js"></script>
+  </body>
+</html>

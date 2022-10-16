@@ -1,0 +1,82 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+div audio {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#myCanvas {
+  margin-bottom: 10px;
+  border: 1px solid;
+}
+.eq {
+  margin: 32px;
+  border: 1px solid;
+  border-radius: 15px;
+  background-color: #A2D2FF;
+  padding: 10px;
+  width: 300px;
+  box-shadow: 10px 10px 5px grey;
+  text-align: center;
+  font-family: "Open Sans";
+  font-size: 12px;
+}
+
+div.controls-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.controls{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0 1rem;
+    place-items: center;
+    padding: .5rem 0;
+    width: 100%;
+}
+
+div.controls label {
+  text-align: center;
+}
+
+div.controls label,
+div.controls input,
+output {
+  vertical-align: middle;
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", Verdana, Geneva, sans-serif, sans-serif;
+  font-size: 12px;
+}
+
+
+.fast-forward{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    padding-bottom: 1rem;
+
+}
+
+.fast-forward button{
+    outline: none;
+    border: none;
+    background: #BC6C25;;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.fast-forward button:hover{
+    opacity: .9;
+}
